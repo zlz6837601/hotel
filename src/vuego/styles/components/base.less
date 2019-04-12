@@ -1,0 +1,189 @@
+/* === Page/Content/Header/Footer  === */
+@headerHeight: 44px;
+@footerHeight: 50px;
+
+@iphonexBottom: 20px;
+
+.v-page {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  &--has-header {
+    &> .v-content {
+      padding-top: @headerHeight;
+    }
+  }
+  &--has-footer {
+    &> .v-content {
+      padding-bottom: @footerHeight;
+    }
+  }
+}
+
+.v-content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: auto;
+  z-index: 10;
+  background: #ffffff;
+}
+
+.v-block {
+  margin: 25px 0;
+  padding: 0 15px;
+  color: #6d6d72;
+  box-sizing: border-box;
+  p {
+      padding: 1em 0;
+  }
+}
+
+.v-title {
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 14px;
+  text-transform: uppercase;
+  line-height: 1;
+  color: #6d6d72;
+  margin: 25px 15px 10px;
+  &+ .v-block{
+    margin-top: 10px;
+  }
+  &+ .v-list{
+    margin-top: 15px;
+  }
+}
+
+.v-header, .v-footer {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  z-index: 11;
+}
+.v-header {
+  top: 0;
+  height: @headerHeight;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
+  box-sizing: border-box;
+  &__left {
+    display: flex;
+    flex-shrink: 0;
+    justify-content: flex-start;
+    align-items: center;
+    margin-right: 10px;
+  }
+  &__center {
+    font-size: 17px;
+    font-weight: 300;
+    text-align: center;
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    line-height: 44px;
+    flex-shrink: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__right {
+    display: flex;
+    flex-shrink: 0;
+    justify-content: flex-end;
+    align-items: center;
+    margin-left: 10px;
+  }
+}
+.v-footer {
+  bottom: 0;
+  background: #ffffff;
+  height: @footerHeight;
+  box-sizing: content-box;
+}
+
+
+// @media only screen
+//   and (device-width : 375px)
+//   and (device-height : 812px)
+//   and (-webkit-device-pixel-ratio : 3) {
+//     .v-page {
+//       &--has-footer {
+//         &> .v-content {
+//           padding-bottom: @footerHeight + @iphonexBottom;
+//         }
+//       }
+//       .v-footer {
+//         padding-bottom: @iphonexBottom;
+//       }
+//     }
+//   }
+
+@media only screen
+  and (device-width : 375px)
+  and (device-height : 812px)
+  and (orientation: landscape)
+  and (-webkit-device-pixel-ratio : 3) {
+    .v-content {
+      padding: 0 34px;
+    }
+  }
+
+// For iPhoneX 
+  @media only screen 
+  and (-webkit-device-pixel-ratio: 3) 
+  and (device-height: 812px) 
+  and (device-width: 375px) {
+    .v-page {
+      &--has-footer {
+        &> .v-content {
+          padding-bottom: @footerHeight + @iphonexBottom;
+        }
+      }
+      .v-footer {
+        padding-bottom: @iphonexBottom;
+      }
+    }
+  }
+  // For iPhoneXS MAX 
+  @media only screen 
+  and (-webkit-device-pixel-ratio: 3) 
+  and (device-height: 896px) 
+  and (device-width: 414px) {
+    .v-page {
+      &--has-footer {
+        &> .v-content {
+          padding-bottom: @footerHeight + @iphonexBottom;
+        }
+      }
+      .v-footer {
+        padding-bottom: @iphonexBottom;
+      }
+    }
+  }
+  // For iPhoneXR 
+  @media only screen 
+  and (-webkit-device-pixel-ratio: 2) 
+  and (device-height: 896px) 
+  and (device-width: 414px) {
+    .v-page {
+      &--has-footer {
+        &> .v-content {
+          padding-bottom: @footerHeight + @iphonexBottom;
+        }
+      }
+      .v-footer {
+        padding-bottom: @iphonexBottom;
+      }
+    }
+  }

@@ -1,0 +1,51 @@
+/* === Search === */
+
+.v-search {
+  height: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+.v-searchbar {
+  position: relative;
+  align-items: center;
+  background-color: @grey;
+  box-sizing: border-box;
+  display: flex;
+  padding: 8px 10px;
+  z-index: 1;
+  &-inner {
+    align-items: center;
+    background-color: @white;
+    border-radius: 2px;
+    display: flex;
+    flex: 1;
+    height: 28px;
+    padding: 4px 6px;
+
+    .v-search {
+      font-size: 12px;
+      color: @gray;
+    }
+  }
+
+  &-core {
+    appearance: none;
+    border: 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    outline: 0;
+  }
+
+  &-cancel {
+    color: @default-color;
+    margin-left: 10px;
+    text-decoration: none;
+  }
+}
+
+.v-search-list {
+  overflow: auto;
+  padding-top: 44px;
+  position: absolute 0 0 0 0;
+}

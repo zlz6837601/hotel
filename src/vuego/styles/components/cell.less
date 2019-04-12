@@ -1,0 +1,111 @@
+/* === Cell === */
+
+.v-cell {
+  background-color: @white;
+  box-sizing: border-box;
+  color: inherit;
+  min-height: 48px;
+  display: block;
+  overflow: hidden;
+  position: relative;
+  text-decoration: none;
+
+  &:first-child {
+    .v-cell-wrapper {
+      background-origin: border-box;
+    }
+  }
+
+  &:last-child {
+    background-image: linear-gradient(0deg, @grey, @grey 50%, transparent 50%);
+    background-size: 100% 1px;
+    background-repeat: no-repeat;
+    background-position: bottom;
+  }
+
+  &-wrapper {
+    background-image:linear-gradient(180deg, @grey, @grey 50%, transparent 50%);
+    background-size: 120% 1px;
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-origin: content-box;
+    align-items: center;
+    box-sizing: border-box;
+    display: flex;
+    font-size: 16px;
+    line-height: 1;
+    min-height: inherit;
+    overflow: hidden;
+    padding: 0 10px;
+    width: 100%;
+  }
+
+  &-mask {
+    &::after {
+      background-color: #000;
+      content: " ";
+      opacity: 0;
+      position: absolute 0;
+    }
+
+    &:active::after {
+      opacity: .1;
+    }
+  }
+
+  &-text {
+    vertical-align: middle;
+  }
+
+  &-label {
+    color: #888888;
+    display: block;
+    font-size: 12px;
+    margin-top: 6px;
+  }
+
+  img {
+    vertical-align: middle;
+  }
+
+  &-title {
+    flex: 1;
+  }
+
+  &-value {
+    color: #888888;
+    display: flex;
+    align-items: center;
+    &.is-link {
+      margin-right: 24px;
+    }
+  }
+
+  &-left {
+    position: absolute;
+    height: 100%;
+    left: 0;
+    transform: translate3d(-100%, 0, 0);
+  }
+
+  &-right {
+    position: absolute;
+    height: 100%;
+    right: 0;
+    top: 0;
+    transform: translate3d(100%, 0, 0);
+  }
+
+  &-allow-right::after {
+    border: solid 2px @color-border;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    content: " ";
+    position: absolute;
+    left: 50%;
+    top: 20px;
+    width: 5px;
+    height: 5px;
+    transform: translateY(-50%) rotate(45deg);
+  }
+}

@@ -1,0 +1,28 @@
+/* === datetime-picker === */
+
+.v-datetime {
+  width: 100%;
+  .picker-slot-wrapper, .picker-item {
+    backface-visibility: hidden;
+  }
+  .picker-toolbar {
+    border-bottom: solid 1px #eaeaea;
+  }
+
+  &__action {
+    display: inline-block;
+    width: 50%;
+    text-align: center;
+    line-height: 40px;
+    font-size: 16px;
+    color: @default-color;
+  }
+
+  &__cancel {
+    float: left;
+  }
+
+  &__confirm {
+    float: right;
+  }
+}

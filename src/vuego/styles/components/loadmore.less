@@ -1,0 +1,29 @@
+/* === loadmore === */
+
+.v-loadmore {
+  overflow: hidden;
+  &-content {
+    &.is-dropped {
+      transition: .2s;
+    }
+  }
+  &-top, &-bottom {
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+  }
+  &-top {
+    margin-top: -50px;
+  }
+  &-bottom {
+    margin-bottom: -50px;
+  }
+  &-spinner {
+    display: inline-block;
+    margin-right: 5px;
+    vertical-align: middle;
+  }
+  &-text {
+    vertical-align: middle;
+  }
+}
